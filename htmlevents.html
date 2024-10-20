@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <button onclick=showpara()>click</button>
+    <p id="p1"></p>
+    <button ondblclick=changesize()>doubleclick</button>
+    <div id="img"><img src="./download (2).jpeg"></div>
+    <h1 onmouseover=transform()>DOM</h1>
+    <button id="btn" onmousedown=rotate() onmouseup=rotateleft()>mousedown</button>
+    <div id="img2"><img src="./download.jpeg"></div>
+    <button onmouseup=up() >mouseup</button>
+    <b id="b1">what</b>
+    <img src="./flower.jpeg" onmousemove=big() onmouseout=small() style="position: relative; left:500px; bottom:600px;" class="img4" >
+</head>
+<body>
+    <script>
+        function showpara(){
+        let p_ele=document.getElementById("p1")
+        p_ele.innerHTML="HTML is the universal markup language for the Web. HTML lets you format text, add graphics, create links, input forms, frames and tables, etc., and save it all in a text file that any browser can read and display."
+        p_ele.style.color="red"
+        p_ele.style.fontSize="25px"
+    }
+    function changesize(){
+        let image=document.getElementById("img")
+        image.innerHTML="<img src='./download (2).jpeg' height='300px' width='250px'>"
+    } 
+    function transform(){
+        var h1_ele=document.getElementsByTagName("h1")
+        h1_ele[0].innerHTML="Document object model"
+        h1_ele[0].style.transform="translateX(300px)"
+    }  
+    function rotate(){
+        var h2_ele=document.getElementById("img2")
+        h2_ele.innerHTML="<img src='./download.jpeg' height='200px' width='200px'>"
+        h2_ele.style.transform="rotate(30deg)"
+        // rotateleft()
+        
+
+    }
+
+        function rotateleft(){
+       var h2_ele=document.getElementById("img2")
+        h2_ele.innerHTML="<img src='./download.jpeg' height='200px' width='200px'>"
+        h2_ele.style.transform="rotate(-0deg)"
+    }
+    function up(){
+        var bold=document.getElementById("b1")
+        console.log(bold)
+        bold.innerHTML="<i>This is javascript</i>"
+        bold.style.color="orange"
+        bold.style.transform="scale(3)"
+    }
+    function big(){
+        let size=document.getElementsByClassName("img4")
+        size[0].style.transform="scale(1.5)"
+    }
+    function small(){
+        let size=document.getElementsByClassName("img4")
+        size[0].style.transform="scale(0.5)"
+    }
+</script>
+    
+</body>
+</html>
